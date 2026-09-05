@@ -1,0 +1,53 @@
+# FragFlex configuration used for the paper experiments.
+type: fragflex
+
+# Categorical diffusion
+# T=500 with the cosine schedule from the paper (s=0.008).
+diffusion_steps: 500
+cosine_s: 0.008
+
+# Flexible-size deletion/insertion schedule.
+# Paper notation: logistic zeta'(t) with reverse-sampling peak s_p=0 and w=0.05.
+zeta_schedule: sampling_logistic
+zeta_D: 0.50                 # legacy-only; ignored by sampling_logistic
+zeta_w: 0.05
+zeta_sampling_peak_step: 0
+zeta_sampling_tau: 0.10      # exponential-only; ignored here
+zeta_event_rel_threshold: 0.001
+
+# Terminal state: one fragment sampled from the empirical fragment marginal.
+root_terminal_prior: fragment
+
+# DiGress-style cycle auxiliary features used by the final model.
+use_digress_cycles: true
+
+# Graph/model size
+max_nodes: 32
+max_delta_per_step: null
+
+# Main denoiser f_theta
+d_model: 384
+d_edge: 96
+d_time: 96
+n_layers: 7
+n_heads: 8
+ff_mult: 4
+dropout: 0.05
+
+# Count model g_phi
+delta_d_model: 128
+delta_d_edge: 32
+delta_n_layers: 2
+delta_n_heads: 8
+
+# Training losses / neural assembly head
+lambda_edge: 5.0
+lambda_delta: 1.0
+lambda_site: 2.0
+site_d_hidden: 128
+site_temperature: 1.0
+
+# Sampling temperatures
+sample_delta: true
+delta_temperature: 1.0
+categorical_temperature: 1.0

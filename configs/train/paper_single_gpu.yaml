@@ -1,0 +1,20 @@
+# Single-GPU reproduction of the paper training setup.
+# The paper used 4 GPUs x batch 32 = effective batch 128.
+# On one GPU we keep a micro-batch of 32 and accumulate 4 steps so the
+# optimizer update frequency and effective batch size remain approximately the same.
+n_epochs: 200
+batch_size: 32
+accumulate_grad_batches: 4
+num_workers: 0
+
+lr: 0.0002
+weight_decay: 0.001
+clip_grad: 1.0
+
+# 5% linear warmup from 0.1x LR, then cosine decay to 0.05x LR.
+lr_scheduler: cosine
+warmup_ratio: 0.05
+warmup_start_factor: 0.1
+min_lr_ratio: 0.05
+
+seed: 0

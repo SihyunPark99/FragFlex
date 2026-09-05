@@ -1,0 +1,12 @@
+# ZINC fragment graphs converted from the public FragDiffusion preprocessing
+# artifacts in data/frag (100,000 graphs in the released upstream file).
+name: zinc_fragdiffusion_100k
+datadir: data/fragflex_neural
+
+# Used only as a deterministic fallback when split_idxs.npz is not present.
+# scripts.prepare_data copies FragDiffusion's released split_idxs.npz, which
+# takes precedence and reproduces the exact precomputed train/validation/test split.
+split_seed: 1234
+test_fraction: 0.20
+train_fraction_of_remaining: 0.80
+pin_memory: true

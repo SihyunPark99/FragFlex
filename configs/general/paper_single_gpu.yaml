@@ -1,0 +1,21 @@
+# Single-GPU paper reproduction settings.
+name: fragflex-paper-${dataset.name}-seed${train.seed}
+
+# Weights & Biases. Set to online from the CLI if desired.
+wandb: disabled              # online | offline | disabled
+project: fragflex
+entity: null
+wandb_dir: wandb
+
+# Lightning execution
+# This public reproduction preset intentionally uses exactly one GPU.
+gpus: 1
+accelerator: gpu
+strategy: auto
+precision: 32-true
+check_val_every_n_epochs: 1
+log_every_steps: 50
+progress_bar: true
+
+checkpoint_dir: checkpoints
+resume: null

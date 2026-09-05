@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environments / IDE
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+
+# Hydra / Lightning / W&B outputs
+outputs/
+multirun/
+wandb/
+lightning_logs/
+checkpoints/
+*.ckpt
+
+# Cluster logs
+slurmlog/
+*.out
+*.err
+
+# Downloaded FragDiffusion artifacts
+data/frag/mol_frag_graphs_100000.pt.gz
+data/frag/split_idxs.npz
+
+# FragFlex-processed training data
+data/fragflex_neural/
+
+# Generated molecule samples
+fragflex_*_seed*.txt
+
+# OS
+.DS_Store
