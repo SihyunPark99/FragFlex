@@ -1,4 +1,8 @@
-# FragFlex
+# FragFlex: Fragment-Based Flexible Molecular Generation for Exploring Vast Chemical Space
+
+<p align="center">
+  <img src="example.gif" width="800" alt="FragFlex sampling example">
+</p>
 
 FragFlex is a fragment-level discrete diffusion model for flexible-size molecular generation. This repository contains the compact ZINC experiment code path used for the paper and a single-GPU reproduction configuration.
 
@@ -236,4 +240,4 @@ FragFlex/
 
 ## Upstream attribution
 
-The ZINC fragment preprocessing artifacts originate from the public FragDiffusion repository by Daniel T. Levy and collaborators. `scripts.prepare_data` pins upstream commit `564951e964dce68246530d6486d4eebe04fa50b8` so the released inputs are reproducible. Consult the upstream FragDiffusion repository and license for the terms covering those artifacts.
+The ZINC fragment preprocessing artifacts originate from the public FragDiffusion repository by Daniel T. Levy and collaborators.
